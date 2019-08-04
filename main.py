@@ -29,6 +29,8 @@ class App():
     Sets the following:
     self.RENT_COLLECTION_DEADLINE_DAY
     self.RENT_PAYMENT_DEADLINE_DAY
+    self.RENT_PAYMENT_SECTION_ID
+    self.FINANCE_PROJECT_ID
     """
     def load_config(self):
         with open("config.yaml") as file:
@@ -36,6 +38,8 @@ class App():
             config = yaml.load(data, Loader=yaml.FullLoader)
             self.RENT_COLLECTION_DEADLINE_DAY =  config['RENT_COLLECTION_DEADLINE_DAY']
             self.RENT_PAYMENT_DEADLINE_DAY = config['RENT_PAYMENT_DEADLINE_DAY']
+            self.RENT_PAYMENT_SECTION_ID = config['RENT_PAYMENT_SECTION_ID']
+            self.FINANCE_PROJECT_ID = config['FINANCE_PROJECT_ID']
 
 
     def setup_client(self):

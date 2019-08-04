@@ -12,9 +12,9 @@ class App():
         with open(".secrets") as file:
             data = file.read()
             secrets = yaml.load(data, Loader=yaml.FullLoader)
-            self.CLIENT_ID = secrets['CLIENT_ID']
+            # self.CLIENT_ID = secrets['CLIENT_ID']
             # self.CLIENT_SECRET = secrets['CLIENT_ID']
-            # self.ACCESS_TOKEN =  secrets['ACCESS_TOKEN']
+            self.ACCESS_TOKEN =  secrets['ACCESS_TOKEN']
 
     def setup_client(self):
         self.client = asana.Client.access_token(self.ACCESS_TOKEN)
